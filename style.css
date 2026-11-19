@@ -44,3 +44,6 @@ html,body{margin:0;height:100%;background:#14121a;overflow:hidden;overscroll-beh
 .bar{position:fixed;left:0;right:0;bottom:0;height:3px;background:#2d2a38}
 .bar i{display:block;height:100%;width:0;background:#e8334a;transition:width .3s}
 @media (prefers-reduced-motion:reduce){.flap{transition-duration:.01s}}
+
+/* Qwen art stays inside its cutout window at phone sizes. */
+.flap{overflow:hidden}.gallery-link{position:fixed;top:max(12px,env(safe-area-inset-top));right:16px;z-index:900;color:#d7cce2;font-size:12px;text-decoration:underline;padding:12px}.ui{gap:8px}.ui button{padding:12px 15px}.caption{font-size:clamp(12px,3.4vw,18px)}

@@ -77,6 +77,7 @@ function tick(step){if(!auto)return;
 function startAuto(){auto=true;autoBtn.textContent='Pause';autoBtn.classList.add('on');clearTimeout(timer);timer=setTimeout(()=>tick(0),1200)}
 function stopAuto(){auto=false;clearTimeout(timer);autoBtn.textContent='Play';autoBtn.classList.remove('on')}
 autoBtn.onclick=()=>auto?stopAuto():startAuto();
+document.getElementById('artset').onclick=()=>{stopAuto();const k=document.getElementById('artset').textContent==='Art A'?1:0;useArtSet(k);PAGES.slice(0,4).forEach((p,i)=>{leaves[i].el.querySelector('.under svg').innerHTML=p.under;leaves[i].el.querySelector('.flap svg').innerHTML=p.flap;});document.getElementById('artset').textContent=k?'Art B':'Art A';};
 const H=new URLSearchParams(location.hash.slice(1));
 if(H.has('p')){stopAuto();const n=+H.get('p');for(let i=0;i<n;i++)setP(i,1);idx=n;prog();if(H.has('open'))leaves[n].flap.classList.add('open');if(H.has('mid')){setP(n,+H.get('mid'))}}
 else if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startAuto();else stopAuto();

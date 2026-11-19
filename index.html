@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=yes">
 <meta name="theme-color" content="#14121a">
 <title>Top student notes: page flip and paper cutouts</title>
 <link rel="stylesheet" href="style.css">
@@ -18,14 +18,17 @@
   <div class="book" id="book" aria-label="Medical student notebook"></div>
   <div class="caption" id="caption">Pov: When you're studying medicine at a university, look at the notebooks of the top students</div>
   <div class="hint" id="hint">Swipe to flip. Tap a cutout to lift it.</div>
+  <a class="gallery-link" href="gallery.html">View the 20 finalists</a>
   <nav class="ui">
     <button id="prev" aria-label="Previous page">&#8249;</button>
     <button id="auto" aria-label="Autoplay" class="on">Pause</button>
+    <button id="artset" aria-label="Switch illustration set">Art A</button>
     <button id="next" aria-label="Next page">&#8250;</button>
   </nav>
   <div class="bar"><i id="bar"></i></div>
 </main>
 <script src="pages.js"></script>
+<script src="art.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

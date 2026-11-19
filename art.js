@@ -1,0 +1,7 @@
+// Qwen-generated SVG artwork. All responses verified as free, then visually reviewed.
+const QWEN_ART={"2": "art/002-tooth-exterior.svg", "8": "art/008-tooth-exterior.svg", "11": "art/011-tooth-section.svg", "19": "art/019-tooth-section.svg", "24": "art/024-ribcage.svg", "29": "art/029-ribcage.svg", "32": "art/032-lungs.svg", "37": "art/037-lungs.svg", "44": "art/044-abdominal-wall.svg", "48": "art/048-abdominal-wall.svg", "51": "art/051-digestive.svg", "57": "art/057-digestive.svg", "62": "art/062-heart-exterior.svg", "65": "art/065-heart-exterior.svg", "74": "art/074-heart-section.svg", "79": "art/079-heart-section.svg", "83": "art/083-skull.svg", "87": "art/087-skull.svg", "93": "art/093-vertebra.svg", "96": "art/096-vertebra.svg"};
+const artImage=(n,w,h)=>`<image href="${QWEN_ART[n]}" x="0" y="0" width="${w}" height="${h}" preserveAspectRatio="xMidYMid meet"/>`;
+const artSets=[[[8,11],[24,37],[44,57],[65,79]],[[2,19],[29,32],[48,51],[62,74]]];
+function useArtSet(k){[tooth,thorax,abdomen,heart].forEach((p,i)=>{p.flap=`<rect x="1" y="1" width="${p.win.w-2}" height="${p.win.h-2}" rx="2" fill="#fbfaf6" stroke="#cfc8b9" stroke-width="1"/>`+artImage(artSets[k][i][0],p.win.w,p.win.h);p.under=artImage(artSets[k][i][1],p.win.w,p.win.h);});}
+useArtSet(0);
+tooth.notes=()=>title("Teeth · Dentes")+hw(14,312,"Enamel / dentin / pulp / root",15)+hw(14,336,"Lift the crown to explore the section",14)+hw(14,360,"Pulp contains nerves + blood vessels",14)+hw(14,384,"Illustrative anatomy, not to scale",13);

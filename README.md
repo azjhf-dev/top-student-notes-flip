@@ -1,7 +1,10 @@
-# Top student notes: page flip and paper cutouts
+# Anatomy flip notebook
 
-A mobile-first web recreation of the "top medical students' notes" short: a spiral notebook with a 3D page flip and layered paper cutouts that lift to show the anatomy underneath. Plain HTML, CSS, JS and inline SVG. No build step, no dependencies.
+Mobile SVG anatomy notebook with hinged paper cutouts.
 
-All drawings are original SVG made for this project. Handwriting font: Caveat (SIL OFL).
+## Qwen illustration pass
+100 completed SVGs generated through free Qwen 4 Max, rendered and visually reviewed; 50 shortlisted, 20 selected. Art A/B switches two complete sets across the four anatomical pages. The final20 gallery adds skull and vertebra studies.
 
-Swipe or tap to flip pages. Tap a cutout to lift it. Autoplay demo runs on load.
+Illustrative artwork, not a validated anatomical atlas. Not photographic. Some structures remain simplified.
+
+See selection.csv for prompts, model, zero-cost response metadata and selection decisions. No paid generation. All100 sourceSVGs retained in art/.
