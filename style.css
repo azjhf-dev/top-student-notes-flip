@@ -1,0 +1,46 @@
+@font-face{font-family:Caveat;font-weight:500;src:url(fonts/Caveat-500.ttf) format('truetype');font-display:swap}
+@font-face{font-family:Caveat;font-weight:700;src:url(fonts/Caveat-700.ttf) format('truetype');font-display:swap}
+.ink{font-family:Caveat,'Bradley Hand','Segoe Print',cursive;font-weight:500;fill:#2b2a36}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#14121a;overflow:hidden;overscroll-behavior:none;touch-action:none;font-family:system-ui,sans-serif}
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 30%,#2a2634,#14121a 70%);padding-bottom:64px}
+.book{--W:min(88vw,calc((100dvh - 150px) * .70));position:relative;width:var(--W);aspect-ratio:300/430;
+  perspective:1700px;perspective-origin:30% 45%;margin-right:3vw;user-select:none;-webkit-user-select:none}
+.leaf{position:absolute;inset:0;transform-origin:100% 50%;transform-style:preserve-3d;will-change:transform}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px 2px 2px 4px;overflow:hidden;
+  background:#fbfaf6;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.face.back{transform:rotateY(180deg)}
+.paper{position:absolute;inset:0;
+  background:
+   radial-gradient(ellipse at 30% 60%,rgba(140,110,230,.20),transparent 55%),
+   linear-gradient(rgba(110,130,180,.13) 1px,transparent 1px) 0 0/100% 4.6%,
+   linear-gradient(90deg,rgba(110,130,180,.10) 1px,transparent 1px) 0 0/6.4% 100%,
+   #fbfaf6}
+.paper.dark{background:radial-gradient(ellipse at 50% 40%,#f1ecde,#e2dac6)}
+.sheet{position:absolute;inset:0}
+.sheet svg,.under svg,.flap svg{width:100%;height:100%;display:block;overflow:visible}
+.under{position:absolute;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#f4efe0,#e6dec8);
+  box-shadow:inset 0 5px 9px rgba(0,0,0,.38),inset 4px 0 8px rgba(0,0,0,.22),inset 0 0 0 1px rgba(0,0,0,.15)}
+.under svg{transform:translate(calc(var(--px,0)*-3px),calc(var(--py,0)*-3px))}
+.flap{position:absolute;transform-origin:50% 0;transition:transform .95s cubic-bezier(.3,.8,.25,1);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)) drop-shadow(0 6px 8px rgba(0,0,0,.2));cursor:pointer;
+  transform:translate(calc(var(--px,0)*2px),calc(var(--py,0)*2px)) perspective(700px) rotateX(0deg)}
+.flap.open{transform:translate(0,0) perspective(700px) rotateX(128deg);filter:drop-shadow(0 8px 8px rgba(0,0,0,.35))}
+.holes{position:absolute;top:0;bottom:0;right:0;width:7%;
+  background:radial-gradient(circle at 50% 50%,#1b1824 0 32%,rgba(0,0,0,.35) 36%,transparent 42%) 0 0/100% 5.2%}
+.shade{position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:linear-gradient(to left,rgba(0,0,0,.45),rgba(0,0,0,0) 65%)}
+.back .shade{background:linear-gradient(to right,rgba(0,0,0,.45),rgba(0,0,0,0) 65%)}
+.mirror{position:absolute;inset:0;transform:scaleX(-1);opacity:.16;filter:blur(.4px)}
+.spiral{position:absolute;top:2%;bottom:2%;right:-3.6%;width:7.2%;z-index:500;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between}
+.spiral i{display:block;height:2.3%;min-height:7px;border-radius:99px;
+  background:linear-gradient(#f5f5f8,#8d8f9c 45%,#3b3c47 60%,#c9cbd6);box-shadow:0 2px 3px rgba(0,0,0,.55)}
+.caption{position:fixed;z-index:700;pointer-events:none;background:#fff;color:#111;border-radius:14px;padding:9px 12px;text-align:center;font:600 clamp(12px,3.6vw,18px)/1.15 system-ui,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.hint{position:fixed;bottom:76px;width:100%;text-align:center;color:#9a95aa;font:13px system-ui;pointer-events:none;transition:opacity .6s}
+.ui{position:fixed;bottom:14px;left:0;right:0;display:flex;gap:12px;justify-content:center;z-index:800}
+.ui button{background:#2d2a38;color:#f1eef8;border:0;border-radius:99px;padding:12px 20px;font:600 15px system-ui;min-width:56px}
+.ui button.on{background:#c0392b}
+.bar{position:fixed;left:0;right:0;bottom:0;height:3px;background:#2d2a38}
+.bar i{display:block;height:100%;width:0;background:#e8334a;transition:width .3s}
+@media (prefers-reduced-motion:reduce){.flap{transition-duration:.01s}}
